@@ -70,7 +70,7 @@ public class Board {
      * @return Null if unoccupied or the Piece object if occupied
      */
     public Piece getPiece(int positionX, int positionY) {
-        if (positionX > 0 && positionX < 8 && positionY > 0 && positionY < 8) {
+        if (positionX >= 0 && positionX < 8 && positionY >= 0 && positionY < 8) {
             return board[positionX][positionY];
         } else {
             return null;
