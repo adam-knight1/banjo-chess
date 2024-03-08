@@ -1,8 +1,6 @@
 package org.banjochess.piecelogic;
 
 import org.banjochess.Piece;
-import org.boredombuster.chessengine.Board;
-import org.boredombuster.chessengine.Piece;
 
 public class King extends Piece {
     public King(boolean isWhite) {

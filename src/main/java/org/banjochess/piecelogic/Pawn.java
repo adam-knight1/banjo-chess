@@ -1,9 +1,7 @@
 package org.banjochess.piecelogic;
 
 import org.banjochess.Piece;
-import org.banjochess.piecelogic.Board;
-import org.boredombuster.chessengine.Board;
-import org.boredombuster.chessengine.Piece;
+
 
 public class Pawn extends Piece {
     public Pawn(boolean isWhite){
