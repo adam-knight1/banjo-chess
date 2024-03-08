@@ -11,8 +11,8 @@ public class Board {
         this.board = new Piece[8][8];
     }
 
-    /** The pieces are placed in their respective starting positions in the following setup method
-     *
+    /**
+     * The pieces are placed in their respective starting positions in the following setup method
      */
     private void setupBoard() {
 
@@ -33,7 +33,7 @@ public class Board {
 
         // Black rooks
 
-        board[7][0] = new Rook( false);
+        board[7][0] = new Rook(false);
         board[7][7] = new Rook(false);
 
 
@@ -62,8 +62,13 @@ public class Board {
         board[7][4] = new King(false);
     }
 
-    public Piece getPiece(int positionX, int positionY){
+    public Piece getPiece(int positionX, int positionY) {
 
+        if (positionX > 0 && positionX < 8 && positionY > 0 && positionY < 8) {
+            return board[positionX][positionY];
+        } else {
+            return null;
+        }
     }
 }
 
