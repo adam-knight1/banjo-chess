@@ -18,7 +18,13 @@ public class Knight extends Piece {
             //two square down X and one up Y or
         //  two square up Y and acros X
 
-        boolean isValidMove;
+        boolean isValidMove = ((deltaX == 2 && deltaY == 1)) || (deltaX ==1 && deltaY == 2); //Determine if piece moved in L shape
+
+        if (!isValidMove) {
+            return false;
+        }
+
+        Piece destinationPiece = board.getPiece(destinationX,destinationY); //find out what piece is on the landing spot for the knight
 
         return false;
     }
