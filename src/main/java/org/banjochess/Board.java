@@ -1,6 +1,7 @@
-package org.banjochess.piecelogic;
+package org.banjochess;
 
 import org.banjochess.Piece;
+import org.banjochess.piecelogic.*;
 
 public class Board {
     private Piece[][] board;

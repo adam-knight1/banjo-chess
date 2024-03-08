@@ -1,7 +1,5 @@
 package org.banjochess;
 
-import org.banjochess.piecelogic.Board;
-
 /** This abstract class will serve as a template for the various chess pieces, contained within the piecelogic folder
  */
 public abstract class Piece {

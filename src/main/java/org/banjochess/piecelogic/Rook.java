@@ -1,5 +1,6 @@
 package org.banjochess.piecelogic;
 
+import org.banjochess.Board;
 import org.banjochess.Piece;
 
 public class Rook extends Piece {
