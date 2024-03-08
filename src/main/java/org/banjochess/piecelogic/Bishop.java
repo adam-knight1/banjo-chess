@@ -47,7 +47,6 @@ public class Bishop extends Piece {
             }
             return true;  //if not false, the path is clear;
         }
-
         return false; //if the move is not diagonal per the first check
     }
 }
