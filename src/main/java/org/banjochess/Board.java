@@ -62,8 +62,13 @@ public class Board {
         board[7][4] = new King(false);
     }
 
+    /** Determines if a space on the board is occupied.
+     *
+     * @param positionX
+     * @param positionY
+     * @return Null if unoccupied or the Piece object if occupied
+     */
     public Piece getPiece(int positionX, int positionY) {
-
         if (positionX > 0 && positionX < 8 && positionY > 0 && positionY < 8) {
             return board[positionX][positionY];
         } else {
