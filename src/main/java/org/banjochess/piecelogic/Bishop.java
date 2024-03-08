@@ -4,7 +4,6 @@ import org.banjochess.Board;
 import org.banjochess.Piece;
 
 public class Bishop extends Piece {
-
     Board board;
 
     public Bishop(boolean isWhite) {

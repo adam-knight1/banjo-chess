@@ -9,6 +9,7 @@ public class Board {
 
     public Board() {
         this.board = new Piece[8][8];
+        setupBoard(); //setting up the board using the below method
     }
 
     /**

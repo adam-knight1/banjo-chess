@@ -1,2 +1,6 @@
-package PieceTests;public class BishopTest {
+package PieceTests;
+
+public class BishopTest {
+
+
 }
