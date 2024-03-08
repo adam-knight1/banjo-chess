@@ -14,7 +14,7 @@ public class Rook extends Piece {
         int deltaX = Math.abs(destinationX - startX);
         int deltaY = Math.abs(destinationY - startY);
 
-        if (deltaX != 0 || deltaY != 0) {
+        if (!(deltaX ==  0 || deltaY == 0)) {
             return false; //this means the movement was diagonal, not purely horizontal or vertical
 
         }
@@ -23,8 +23,21 @@ public class Rook extends Piece {
         int xDirection = Integer.compare(destinationX, startX);
         int yDirection = Integer.compare(destinationY,startY);
 
-        if (board.getPiece(destinationX,destinationY) != null) {
+       //finding any blocking pieces
+        int distance = Math.max(deltaX,deltaY);
 
+        for (int i = 1; i < distance; i++) {
+            int xCurrent = startX + i * xDirection;
+            int yCurrent = startY + i * yDirection;
+
+            Piece destinationPiece = board.getPiece(xCurrent,yCurrent);
+
+
+            if (destinationPiece != null && destinationPiece.isWhite() == this.isWhite()){
+                //checking to see if a piece
+                //is blocking the rook's path, or if the piece is the same color (can't be captured)
+                return false; //blocked
+            }
         }
 
         return false;
