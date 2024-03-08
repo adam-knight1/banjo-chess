@@ -12,4 +12,6 @@ public class King extends Piece {
     public boolean isValidMove(Board board, int startX, int startY, int destinationX, int destinationY) {
         return false;
     }
+
+
 }
