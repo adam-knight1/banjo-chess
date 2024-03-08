@@ -14,6 +14,19 @@ public class Rook extends Piece {
         int deltaX = Math.abs(destinationX - startX);
         int deltaY = Math.abs(destinationY - startY);
 
+        if (deltaX != 0 || deltaY != 0) {
+            return false; //this means the movement was diagonal, not purely horizontal or vertical
+
+        }
+
+        //determine direction of piece by comparing start x and y to destination x and y
+        int xDirection = Integer.compare(destinationX, startX);
+        int yDirection = Integer.compare(destinationY,startY);
+
+        if (board.getPiece(destinationX,destinationY) != null) {
+
+        }
+
         return false;
     }
 }
