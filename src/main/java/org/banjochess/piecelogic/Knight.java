@@ -26,6 +26,8 @@ public class Knight extends Piece {
 
         Piece destinationPiece = board.getPiece(destinationX,destinationY); //find out what piece is on the landing spot for the knight
 
+        if (destinationPiece != null && destinationPiece.isWhite() == this.isWhite){ //can't land on same color piece
         return false;
     }
+        return true; //move is valid!
 }
