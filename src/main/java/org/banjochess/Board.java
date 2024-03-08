@@ -61,6 +61,10 @@ public class Board {
         board[7][3] = new Queen(false);
         board[7][4] = new King(false);
     }
+
+    public Piece getPiece(int positionX, int positionY){
+
+    }
 }
 
 

@@ -4,6 +4,8 @@ import org.banjochess.Board;
 import org.banjochess.Piece;
 
 public class Bishop extends Piece {
+
+    Board board;
     public Bishop(boolean isWhite) {
         super(isWhite); //calling Piece constructor with color value
     }
@@ -24,9 +26,16 @@ public class Bishop extends Piece {
             for (int i = 1; i < steps;i++){
                 //starting from 1 because of starting position and -1 because of destination capture
                 int xCurrent = startX + i * xDirection;
+                int yCurrent = startY + i * yDirection;
 
+                //Using the board.getPiece method to check if the square is occupied, null if it is not
 
-        }
-        return false;
+                if (board.getPiece(destinationX,destinationY) != null) {
+                    return false; //false if any square along path is blocked
+                }
+
+                return true;  //if not false, the path is clear;
+                }
+
     }
 }
