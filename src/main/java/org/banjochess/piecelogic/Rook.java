@@ -8,6 +8,16 @@ public class Rook extends Piece {
         super(isWhite);
     }
 
+    /** This method determines if the Rook follows standard chess rules
+     *
+     * @param board
+     * @param startX
+     * @param startY
+     * @param destinationX
+     * @param destinationY
+     * @return True if valid move.  False if invalid or if path crosses same color piece
+     */
+
     @Override
     public boolean isValidMove(Board board, int startX, int startY, int destinationX, int destinationY) {
 
@@ -16,10 +26,9 @@ public class Rook extends Piece {
 
         if (!(deltaX ==  0 || deltaY == 0)) {
             return false; //this means the movement was diagonal, not purely horizontal or vertical
-
         }
 
-        //determine direction of piece by comparing start x and y to destination x and y
+        //determine direction of piece by comparing start x and y to destination x and y,
         int xDirection = Integer.compare(destinationX, startX);
         int yDirection = Integer.compare(destinationY,startY);
 
@@ -27,19 +36,20 @@ public class Rook extends Piece {
         int distance = Math.max(deltaX,deltaY);
 
         for (int i = 1; i < distance; i++) {
+            //x and y direction are either -1,0,-1 or left none or right movement along x axis
+            //incrementing by i moves each count one square over
             int xCurrent = startX + i * xDirection;
             int yCurrent = startY + i * yDirection;
 
             Piece destinationPiece = board.getPiece(xCurrent,yCurrent);
 
-
             if (destinationPiece != null && destinationPiece.isWhite() == this.isWhite()){
                 //checking to see if a piece
                 //is blocking the rook's path, or if the piece is the same color (can't be captured)
-                return false; //blocked
+                return false; //blocked + can't capture own piece
             }
         }
 
-        return false;
+        return true; //move is valid
     }
 }
