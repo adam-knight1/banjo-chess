@@ -18,7 +18,7 @@ public class Bishop extends Piece {
      * @param startY
      * @param destinationX
      * @param destinationY
-     * @return true if valid move, false if invalid
+     * @return true if valid move, false if invalid or destination has same color piece on it
      */
     @Override
     public boolean isValidMove(Board board, int startX, int startY, int destinationX, int destinationY) {
@@ -44,7 +44,12 @@ public class Bishop extends Piece {
                     return false; //false if any square along path is blocked
                 }
             }
-            return true;  //if not false, the path is clear;
+            Piece destinationPiece = board.getPiece(destinationX, destinationY);
+            if (destinationPiece != null) {
+                return destinationPiece.isWhite() != this.isWhite();
+            }
+            return true;
+
         }
         return false; //if the move is not diagonal per the first check
     }
